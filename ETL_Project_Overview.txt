@@ -1,0 +1,29 @@
+ETL Project Overview
+Will, Jeff, & Claudia 
+
+The sources of data that were extracted from:
+	① Lego Database: Themes and set CSVs
+	② OMDb Database: Box office revenue (API & JSON)
+
+The type of transformation needed for this data (cleaning, joining, filtering, aggregating, etc)
+•  Cleaning 
+	• We needed to further filter the data when joining the movies from the Lego data set 
+	  and the OMDb data set because not all of the movies had box office revenue or there 
+	  were formatting inconsistencies 
+
+•  Joining
+	• Lego Data: Joined theme and set data with a common key (Foreign Key “Theme ID” from Sets 
+	  with Unique Key “ID” from Themes)
+	• Lego and OMDb Data: Added movies from Lego theme list to OMDb API call
+
+•  Filtering
+	• Created a loop to parse out specific parameter (box office revenue) from JSON for each movie
+	  as well as error checking to ensure that the box office field existed and did not introduce
+	  an error 
+	• Hand picked movies out of Lego theme list to reduce amount of data and error reduction on 
+	  API calls
+
+•  Database Selection 
+	  Selected RDBMS based on the logical relationship between the data sets and that each data
+	  set was already standardized. 
+ 
